@@ -65,6 +65,7 @@ public class BidRestServiceTest {
 
     private static Long bidId;
 
+    @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap
                 .create(WebArchive.class, "actionbazaar-rest-test.war")
