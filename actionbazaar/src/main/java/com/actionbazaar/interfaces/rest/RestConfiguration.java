@@ -51,6 +51,6 @@ public class RestConfiguration extends ResourceConfig {
 
     public RestConfiguration() {
         // Resource
-        packages(new String[]{BidRestService.class.getPackage().getName()});															// removed.
+        packages(new String[]{BidRestService.class.getPackage().getName()});
     }
 }
