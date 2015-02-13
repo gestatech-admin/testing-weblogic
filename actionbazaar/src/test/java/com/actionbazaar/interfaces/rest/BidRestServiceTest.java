@@ -58,13 +58,13 @@ import static org.junit.Assert.assertNull;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+// TODO Move this to the client side working through the 
+// Jersey depedency melee.
 @RunWith(Arquillian.class)
-// TODO Move this to client side.
 public class BidRestServiceTest {
 
     private static Long bidId;
 
-    @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap
                 .create(WebArchive.class, "actionbazaar-rest-test.war")
