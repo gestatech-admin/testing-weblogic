@@ -40,6 +40,8 @@
 package com.actionbazaar.interfaces.socket;
 
 import java.io.StringReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
@@ -49,6 +51,9 @@ import javax.websocket.EndpointConfig;
 
 public class ChatMessage
         implements Decoder.Text<ChatMessage>, Encoder.Text<ChatMessage> {
+
+    private static final Logger logger = Logger
+            .getLogger(ChatMessage.class.getName());
 
     private String user;
     private String message;
@@ -77,6 +82,8 @@ public class ChatMessage
 
     @Override
     public ChatMessage decode(String value) {
+        logger.log(Level.FINE, "Decoding JSON: {0}", value);
+
         try (JsonReader jsonReader = Json.createReader(
                 new StringReader(value))) {
             JsonObject jsonObject = jsonReader.readObject();
@@ -94,6 +101,8 @@ public class ChatMessage
 
     @Override
     public String encode(ChatMessage chatMessage) {
+        logger.log(Level.FINE, "Encoding to JSON: {0}", chatMessage);
+
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("user", chatMessage.user)
                 .add("message", chatMessage.message)

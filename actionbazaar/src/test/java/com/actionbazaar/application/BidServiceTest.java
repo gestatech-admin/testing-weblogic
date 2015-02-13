@@ -64,7 +64,7 @@ public class BidServiceTest {
     @Deployment
     public static WebArchive createDeployment() {
         return ShrinkWrap
-                .create(WebArchive.class, "actionbazaar-test.war")
+                .create(WebArchive.class, "actionbazaar-service-test.war")
                 .addClasses(BidService.class, DefaultBidService.class,
                         Profiled.class, ProfilingInterceptor.class,
                         BidRepository.class, DefaultBidRepository.class, Bid.class)

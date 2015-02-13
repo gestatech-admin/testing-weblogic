@@ -39,36 +39,48 @@
  */
 package com.actionbazaar.application;
 
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-
 import com.actionbazaar.domain.Bid;
 import com.actionbazaar.domain.BidRepository;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 @Stateless
 @Profiled
 public class DefaultBidService implements BidService {
+
+    private static final Logger logger = Logger
+            .getLogger(DefaultBidService.class.getName());
 
     @Inject
     private BidRepository bidRepository;
 
     @Override
     public Bid addBid(Bid bid) {
+        logger.log(Level.INFO, "Adding bid: {0}", bid);
+
         return bidRepository.addBid(bid);
     }
 
     @Override
     public Bid getBid(Long id) {
+        logger.log(Level.INFO, "Getting bid: {0}", id);
+
         return bidRepository.getBid(id);
     }
 
     @Override
     public void updateBid(Bid bid) {
+        logger.log(Level.INFO, "Updating bid: {0}", bid);
+
         bidRepository.updateBid(bid);
     }
 
     @Override
     public void deleteBid(Bid bid) {
+        logger.log(Level.INFO, "Deleting bid: {0}", bid);
+
         bidRepository.deleteBid(bid);
     }
 }

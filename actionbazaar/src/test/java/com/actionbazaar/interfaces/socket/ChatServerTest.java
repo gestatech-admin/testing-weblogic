@@ -76,7 +76,7 @@ public class ChatServerTest {
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
         return ShrinkWrap
-                .create(WebArchive.class, "actionbazaar-test.war")
+                .create(WebArchive.class, "actionbazaar-socket-test.war")
                 .addClass(ChatMessage.class)
                 .addClass(ChatServer.class);
     }
@@ -84,7 +84,7 @@ public class ChatServerTest {
     @Test
     public void testChat() {
         try {
-            URI uri = new URI("ws://localhost:7001/actionbazaar-test/chat");
+            URI uri = new URI("ws://localhost:7001/actionbazaar-socket-test/chat");
 
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
 

@@ -7,6 +7,9 @@
     <engine>
         <property name="deploymentExportPath">target/</property>
     </engine>
+    <extension qualifier="webdriver">
+        <property name="browser">firefox</property>
+    </extension>
     <container qualifier="weblogic" default="true">
         <configuration>
             <property name="adminUrl">t3://localhost:7001</property>
