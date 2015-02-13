@@ -73,6 +73,7 @@ public class ChatServerTest {
     private static ChatMessage testMessage;
     private static ChatMessage testReply;
 
+    // This is a client side test.
     @Deployment(testable = false)
     public static WebArchive createDeployment() {
         return ShrinkWrap

@@ -68,6 +68,7 @@ public class AddBidTest {
     @ArquillianResource
     URL contextPath;
 
+    // This is a client-side only test.
     @Deployment(testable = false)
     public static Archive<?> createDeployment() {
         return ShrinkWrap
